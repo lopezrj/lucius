@@ -39,13 +39,10 @@ export default {
         name: ".git"
       },
       {
-        name: "node_modules"
-      },
-      {
-        name: "public",
+        name: "Map",
         children: [
           {
-            name: "static",
+            name: "Regions",
             children: [
               {
                 name: "logo.png",
@@ -60,6 +57,14 @@ export default {
           {
             name: "index.html",
             file: "html"
+          }
+        ]
+      },
+      {
+        name: "Items",
+        children: [
+          {
+            name: "Ships"
           }
         ]
       },

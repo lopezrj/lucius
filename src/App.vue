@@ -46,6 +46,7 @@
               <template v-slot:activator="{ on }">
                 <v-btn :href="source" icon large target="_blank" v-on="on">
                   <v-icon large>mdi-code-tags</v-icon>
+                  {{ results }}
                 </v-btn>
               </template>
               <span>Source</span>
@@ -80,8 +81,16 @@ export default {
     drawer: null,
     drawerRight: null,
     right: false,
-    left: false
+    left: false,
+    results: []
   }),
+  mounted() {
+    this.axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        this.results = response.data.results;
+      });
+  },
   components: {
     LeftBar
   }
